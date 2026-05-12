@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+// Cores padrão (Céu Limpo / Padrão)
+:root {
+  --bg-color: #e0e5ec;
+  --shadow-dark: #a3b1c6;
+  --shadow-light: #ffffff;
+  --text-color: #44474a;
+  --accent-color: #ffa500; // Sol
+}
+
+// Tema para Chuva (Rain / Drizzle)
+body.theme-rain {
+  --bg-color: #a1b0bc;
+  --shadow-dark: #76818a;
+  --shadow-light: #ccdbe8;
+  --text-color: #2c3e50;
+  --accent-color: #3498db;
+}
+
+// Tema para Nuvens (Clouds)
+body.theme-clouds {
+  --bg-color: #d1d9e6;
+  --shadow-dark: #b8bec9;
+  --shadow-light: #ebf2ff;
+  --text-color: #495057;
+  --accent-color: #95a5a6;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.5s ease; // Suaviza a transição de cores
+}
+
+// Mixin para facilitar o Neumorfismo nos componentes
+@mixin neumorphic-flat {
+  background: var(--bg-color);
+  box-shadow: 9px 9px 16px var(--shadow-dark), 
+              -9px -9px 16px var(--shadow-light);
+}
+
+@mixin neumorphic-inset {
+  background: var(--bg-color);
+  box-shadow: inset 6px 6px 12px var(--shadow-dark), 
+              inset -6px -6px 12px var(--shadow-light);
+}
