@@ -9,7 +9,6 @@ import { WeatherData } from '../models/weather.model';
 export class WeatherService {
   private http = inject(HttpClient);
   private readonly API_KEY = '46b1ca78d3d9c853373240323dff2046'; 
-  // Corrigido: A URL da API tem o subdomínio 'api.' e a versão '2.5'
   private readonly BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
   getWeather(city: string): Observable<WeatherData> {
@@ -21,16 +20,22 @@ export class WeatherService {
     };
 
     return this.http.get<any>(this.BASE_URL, { params }).pipe(
-      map(res => ({
-        city: res.name,
-        temp: Math.round(res.main.temp),
-        feelsLike: Math.round(res.main.feels_like),
-        humidity: res.main.humidity,
-        // Corrigido: weather é um array, pegamos o item [0]
-        description: res.weather[0].description,
-        icon: `https://openweathermap.org/img/wn/${res.weather[0].icon}@2x.png`,
-        condition: res.weather[0].main 
-      }))
+      map(res => {
+        // Armazena o código do ícone (ex: '01d' ou '01n') para checar o período do dia
+        const iconCode = res.weather[0].icon;
+
+        return {
+          city: res.name,
+          temp: Math.round(res.main.temp),
+          feelsLike: Math.round(res.main.feels_like),
+          humidity: res.main.humidity,
+          description: res.weather[0].description,
+          icon: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
+          condition: res.weather[0].main,
+          // Se o código do ícone terminar com a letra 'n' (night), significa que é noite na cidade buscada
+          isNoite: iconCode.endsWith('n')
+        };
+      })
     );
   }
 }

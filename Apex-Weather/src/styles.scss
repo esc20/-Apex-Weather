@@ -1,15 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-// Cores padrão (Céu Limpo / Padrão)
+
+// TEMA PADRÃO / PADRÃO DIA (Céu Limpo)
 :root {
   --bg-color: #e0e5ec;
   --shadow-dark: #a3b1c6;
   --shadow-light: #ffffff;
   --text-color: #44474a;
-  --accent-color: #ffa500; // Sol
+  --accent-color: #ffa500; // Sol dourado
 }
 
-// Tema para Chuva (Rain / Drizzle)
-body.theme-rain {
+// TEMA DIA + CHUVA (Azul acinzentado melancólico)
+body.theme-dia.theme-rain {
   --bg-color: #a1b0bc;
   --shadow-dark: #76818a;
   --shadow-light: #ccdbe8;
@@ -17,8 +18,8 @@ body.theme-rain {
   --accent-color: #3498db;
 }
 
-// Tema para Nuvens (Clouds)
-body.theme-clouds {
+// TEMA DIA + NUVENS (Cinza claro encoberto)
+body.theme-dia.theme-clouds {
   --bg-color: #d1d9e6;
   --shadow-dark: #b8bec9;
   --shadow-light: #ebf2ff;
@@ -26,15 +27,43 @@ body.theme-clouds {
   --accent-color: #95a5a6;
 }
 
+// TEMA NOITE GLOBAL (Fundo escuro profundo / Céu Noturno Limpo)
+body.theme-noite {
+  --bg-color: #1e222b;
+  --shadow-dark: #14171d;
+  --shadow-light: #282d39;
+  --text-color: #ecf0f1;
+  --accent-color: #f1c40f; // Lua amarela
+}
+
+// TEMA NOITE + CHUVA (Tempestade noturna com toque neon azul)
+body.theme-noite.theme-rain {
+  --bg-color: #1a1e29;
+  --shadow-dark: #10131b;
+  --shadow-light: #242937;
+  --text-color: #d2dae2;
+  --accent-color: #00d2d3;
+}
+
+// TEMA NOITE + NUVENS (Céu noturno encoberto e denso)
+body.theme-noite.theme-clouds {
+  --bg-color: #232731;
+  --shadow-dark: #191c23;
+  --shadow-light: #2d323f;
+  --text-color: #b2bec3;
+  --accent-color: #74b9ff;
+}
+
 body {
   margin: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Inter', sans-serif;
-  transition: all 0.5s ease; // Suaviza a transição de cores
+  // Transição suave e cinematográfica ao trocar os estilos
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
 }
 
-// Mixin para facilitar o Neumorfismo nos componentes
+// Mixins mantidos e atualizados para respeitar as variáveis dinâmicas
 @mixin neumorphic-flat {
   background: var(--bg-color);
   box-shadow: 9px 9px 16px var(--shadow-dark), 
@@ -46,4 +75,3 @@ body {
   box-shadow: inset 6px 6px 12px var(--shadow-dark), 
               inset -6px -6px 12px var(--shadow-light);
 }
- 

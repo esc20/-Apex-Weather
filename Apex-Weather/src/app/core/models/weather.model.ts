@@ -5,5 +5,6 @@ export interface WeatherData {
   humidity: number;
   description: string;
   icon: string;
-  condition: string; // Ex: 'Clear', 'Clouds', 'Rain'
+  condition: string;
+  isNoite: boolean; 
 }

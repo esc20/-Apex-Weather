@@ -1,0 +1,12 @@
+<main class="container">
+  <header class="app-header">
+    <h1>Apex Weather</h1>
+    <p>Previsão do Tempo Neumórfica</p>
+  </header>
+
+  <!-- O output (onBuscar) chama a nossa função de busca da Home -->
+  <app-busca-cidade (onBuscar)="buscarClima($event)"></app-busca-cidade>
+
+  <!-- Corrigido: Fechamento correto da tag para coincidir com a abertura -->
+  <app-card-clima [dados]="climaAtual()"></app-card-clima>
+</main>

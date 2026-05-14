@@ -1,0 +1,39 @@
+.busca-wrapper {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto 40px auto;
+
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: var(--bg-color);
+    // Efeito "afundado" do Neumorfismo
+    box-shadow: inset 5px 5px 10px var(--shadow-dark), 
+                inset -5px -5px 10px var(--shadow-light);
+    position: relative;
+
+    .lupa-icon {
+      font-size: 1.2rem;
+      margin-right: 12px;
+      color: var(--text-color);
+      opacity: 0.6;
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      outline: none;
+      width: 100%;
+      font-size: 1rem;
+      color: var(--text-color);
+      font-family: 'Inter', sans-serif;
+
+      &::placeholder {
+        color: var(--text-color);
+        opacity: 0.5;
+      }
+    }
+  }
+}

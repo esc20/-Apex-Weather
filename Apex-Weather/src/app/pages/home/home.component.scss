@@ -1,0 +1,30 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .app-header {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h1 {
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin: 0;
+      color: var(--text-color);
+    }
+
+    p {
+      color: var(--text-color);
+      opacity: 0.6;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      margin: 8px 0 0 0;
+    }
+  }
+}

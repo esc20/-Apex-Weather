@@ -1,0 +1,33 @@
+@if (dados()) {
+  <div class="card-clima-container animate-fade-in">
+    <header class="card-header">
+      <h2>{{ dados()?.city }}</h2>
+      <p class="descricao">{{ dados()?.description }}</p>
+    </header>
+
+    <div class="clima-principal">
+      <div class="temperatura-box">
+        <span class="graus">{{ dados()?.temp }}</span>
+        <span class="unidade">°C</span>
+      </div>
+      <div class="icone-box">
+        <img [src]="dados()?.icon" [alt]="dados()?.description" />
+      </div>
+    </div>
+
+    <footer class="detalhes-grid">
+      <div class="detalhe-item">
+        <span class="label">Sensação</span>
+        <span class="valor">{{ dados()?.feelsLike }}°C</span>
+      </div>
+      <div class="detalhe-item">
+        <span class="label">Umidade</span>
+        <span class="valor">{{ dados()?.humidity }}%</span>
+      </div>
+    </footer>
+  </div>
+} @else {
+  <div class="card-placeholder">
+    <p>Busque uma cidade para ver a previsão do tempo.</p>
+  </div>
+}
