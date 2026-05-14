@@ -7,17 +7,18 @@
     display: flex;
     align-items: center;
     padding: 15px 20px;
-    border-radius: 15px;
-    background: var(--bg-color);
-    // Efeito "afundado" do Neumorfismo
-    box-shadow: inset 5px 5px 10px var(--shadow-dark), 
-                inset -5px -5px 10px var(--shadow-light);
+    border-radius: 16px; 
+    background: var(--card-bg);
+    
+    // Efeito "afundado" usando as sombras fixas do card
+    box-shadow: inset 5px 5px 10px var(--card-shadow-dark), 
+                inset -5px -5px 10px var(--card-shadow-light);
     position: relative;
 
     .lupa-icon {
       font-size: 1.2rem;
       margin-right: 12px;
-      color: var(--text-color);
+      color: var(--card-text);
       opacity: 0.6;
     }
 
@@ -27,11 +28,11 @@
       outline: none;
       width: 100%;
       font-size: 1rem;
-      color: var(--text-color);
+      color: var(--card-text);
       font-family: 'Inter', sans-serif;
 
       &::placeholder {
-        color: var(--text-color);
+        color: var(--card-text);
         opacity: 0.5;
       }
     }

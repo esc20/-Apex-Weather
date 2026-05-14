@@ -1,77 +1,86 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles - Apex Weather */
 
-// TEMA PADRÃO / PADRÃO DIA (Céu Limpo)
+// CONFIGURAÇÃO DO CARD (Cinza Neumórfico Neutro e Fixo)
 :root {
-  --bg-color: #e0e5ec;
-  --shadow-dark: #a3b1c6;
-  --shadow-light: #ffffff;
-  --text-color: #44474a;
-  --accent-color: #ffa500; // Sol dourado
-}
-
-// TEMA DIA + CHUVA (Azul acinzentado melancólico)
-body.theme-dia.theme-rain {
-  --bg-color: #a1b0bc;
-  --shadow-dark: #76818a;
-  --shadow-light: #ccdbe8;
-  --text-color: #2c3e50;
-  --accent-color: #3498db;
-}
-
-// TEMA DIA + NUVENS (Cinza claro encoberto)
-body.theme-dia.theme-clouds {
-  --bg-color: #d1d9e6;
+  --card-bg: #e0e5ec;
+  --card-shadow-dark: #a3b1c6;
+  --card-shadow-light: #ffffff;
+  --card-text: #44474a;
+  
+  // Fundo padrão (Céu Limpo Inicial)
+  --bg-color: #d1d9e6; 
   --shadow-dark: #b8bec9;
   --shadow-light: #ebf2ff;
-  --text-color: #495057;
+  --accent-color: #ffa500;
+  
+  // Efeito de moldura quadrada nas bordas bem suave
+  --border-glow: inset 0 0 0px transparent;
+}
+
+// CHUVOSO: Moldura escura e suave bem nas bordas
+body.theme-rain {
+  --bg-color: #b0bec5;
+  --shadow-dark: #90a4ae;
+  --shadow-light: #cfd8dc;
+  --accent-color: #3498db;
+  --border-glow: inset 0 0 150px rgba(44, 62, 80, 0.6); 
+}
+
+// NUVENS: Moldura grafite nas bordas
+body.theme-clouds {
+  --bg-color: #cfd8e3;
+  --shadow-dark: #b1b9c4;
+  --shadow-light: #edf7ff;
   --accent-color: #95a5a6;
+  --border-glow: inset 0 0 150px rgba(93, 106, 117, 0.5);
 }
 
-// TEMA NOITE GLOBAL (Fundo escuro profundo / Céu Noturno Limpo)
+// CALOR EXTREMO: Centro salmão suave, laranja forte bem nas bordas da página
+body.theme-hot {
+  --bg-color: #fbc5b0; 
+  --shadow-dark: #dca08a;
+  --shadow-light: #ffe6dd;
+  --accent-color: #ff4757;
+  // Aumentado para 200px para empurrar o laranja forte totalmente para as bordas
+  --border-glow: inset 0 0 200px rgba(211, 84, 0, 0.9); 
+}
+
+// NOTURNO: Centro azul escuro, bordas pretas
 body.theme-noite {
-  --bg-color: #1e222b;
-  --shadow-dark: #14171d;
-  --shadow-light: #282d39;
-  --text-color: #ecf0f1;
-  --accent-color: #f1c40f; // Lua amarela
+  --bg-color: #2c3e50;
+  --shadow-dark: #1e2b38;
+  --shadow-light: #3a5168;
+  --accent-color: #f1c40f;
+  --border-glow: inset 0 0 200px #0f171e;
 }
 
-// TEMA NOITE + CHUVA (Tempestade noturna com toque neon azul)
-body.theme-noite.theme-rain {
-  --bg-color: #1a1e29;
-  --shadow-dark: #10131b;
-  --shadow-light: #242937;
-  --text-color: #d2dae2;
-  --accent-color: #00d2d3;
-}
-
-// TEMA NOITE + NUVENS (Céu noturno encoberto e denso)
-body.theme-noite.theme-clouds {
-  --bg-color: #232731;
-  --shadow-dark: #191c23;
-  --shadow-light: #2d323f;
-  --text-color: #b2bec3;
-  --accent-color: #74b9ff;
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body {
-  margin: 0;
   background-color: var(--bg-color);
-  color: var(--text-color);
+  box-shadow: var(--border-glow);
   font-family: 'Inter', sans-serif;
-  // Transição suave e cinematográfica ao trocar os estilos
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+  transition: background-color 0.8s ease, box-shadow 0.8s ease; 
+  // Garante que todo o conteúdo inserido no body possa ser centralizado corretamente
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-// Mixins mantidos e atualizados para respeitar as variáveis dinâmicas
+// MIXINS TRAVADOS COM AS CORES DO CARD (Eles nunca mudam!)
 @mixin neumorphic-flat {
-  background: var(--bg-color);
-  box-shadow: 9px 9px 16px var(--shadow-dark), 
-              -9px -9px 16px var(--shadow-light);
+  background: var(--card-bg);
+  box-shadow: 9px 9px 16px var(--card-shadow-dark), 
+              -9px -9px 16px var(--card-shadow-light);
 }
 
 @mixin neumorphic-inset {
-  background: var(--bg-color);
-  box-shadow: inset 6px 6px 12px var(--shadow-dark), 
-              inset -6px -6px 12px var(--shadow-light);
+  background: var(--card-bg);
+  box-shadow: inset 6px 6px 12px var(--card-shadow-dark), 
+              inset -6px -6px 12px var(--card-shadow-light);
 }

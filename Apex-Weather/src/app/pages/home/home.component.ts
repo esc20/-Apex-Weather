@@ -28,22 +28,22 @@ export class HomeComponent {
     this.weatherService.getWeather(cidade).subscribe({
       next: (dados) => {
         this.climaAtual.set(dados);
-        // Passamos o objeto completo de dados para avaliar clima e período
+        // Passamos o objeto completo de dados para avaliar clima, período e calor
         this.atualizarTemaVisual(dados);
       },
       error: (err) => {
-        console.error('Cidade não encontrada', err);
+        console.error('Cidade ou formato inválido (use apenas cidades):', err);
+        // CORREÇÃO DE SENIOR: Reseta o card e limpa o body para o visual original neutro não quebrar
+        this.climaAtual.set(null);
+        this.limparClassesDoBody();
       }
     });
   }
 
-  // Altera as classes do body dinamicamente com base no clima e hora local
+  // Altera as classes do body dinamicamente com base no clima, hora local e calor
   private atualizarTemaVisual(dados: WeatherData) {
-    // 1. Limpa todas as classes antigas do body
-    this.renderer.removeClass(document.body, 'theme-dia');
-    this.renderer.removeClass(document.body, 'theme-noite');
-    this.renderer.removeClass(document.body, 'theme-rain');
-    this.renderer.removeClass(document.body, 'theme-clouds');
+    // 1. Limpa todas as classes antigas do body de forma isolada
+    this.limparClassesDoBody();
 
     // 2. Aplica o tema de Período (Dia ou Noite)
     if (dados.isNoite) {
@@ -59,5 +59,19 @@ export class HomeComponent {
     } else if (condicao === 'clouds') {
       this.renderer.addClass(document.body, 'theme-clouds');
     }
+
+    // 4. Aplica o tema de Calor Extremo se a temperatura for >= 30°C
+    if (dados.isQuente) {
+      this.renderer.addClass(document.body, 'theme-hot');
+    }
+  }
+
+  // Método auxiliar criado para centralizar a limpeza e evitar código duplicado
+  private limparClassesDoBody() {
+    this.renderer.removeClass(document.body, 'theme-dia');
+    this.renderer.removeClass(document.body, 'theme-noite');
+    this.renderer.removeClass(document.body, 'theme-rain');
+    this.renderer.removeClass(document.body, 'theme-clouds');
+    this.renderer.removeClass(document.body, 'theme-hot');
   }
 }

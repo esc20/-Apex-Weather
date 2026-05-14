@@ -1,30 +1,38 @@
 .container {
+  width: 100%;
   max-width: 600px;
+  min-height: 100vh; // Ocupa a altura total da tela para centralizar verticalmente
   margin: 0 auto;
-  padding: 60px 20px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center; 
+  justify-content: center; // Centraliza o bloco inteiro no meio do monitor
+  box-sizing: border-box;
 
   .app-header {
     text-align: center;
     margin-bottom: 40px;
+    // CORRIGIDO: Força o alinhamento em coluna e centraliza os textos verticalmente
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h1 {
       font-weight: 300;
       text-transform: uppercase;
       letter-spacing: 4px;
       margin: 0;
-      color: var(--text-color);
+      color: var(--card-text); 
     }
 
     p {
-      color: var(--text-color);
+      color: var(--card-text);
       opacity: 0.6;
       text-transform: uppercase;
       font-size: 0.75rem;
       letter-spacing: 2px;
-      margin: 8px 0 0 0;
+      margin: 8px 0 0 0; // Dá um respiro pequeno em relação ao h1 acima
     }
   }
 }

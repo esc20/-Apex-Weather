@@ -3,11 +3,13 @@
   max-width: 450px;
   margin: 0 auto;
   padding: 35px;
-  border-radius: 30px;
-  background: var(--bg-color);
-  // Sombra Neumórfica Elevada (usa as variáveis dinâmicas do styles.scss)
-  box-shadow: 9px 9px 18px var(--shadow-dark), 
-              -9px -9px 18px var(--shadow-light);
+  
+  // ADICIONADO: Arredondamento idêntico ao da barra de pesquisas
+  border-radius: 16px; 
+  
+  background: var(--card-bg);
+  box-shadow: inset 5px 5px 10px var(--card-shadow-dark), 
+              inset -5px -5px 10px var(--card-shadow-light);
   transition: all 0.5s ease;
 
   .card-header {
@@ -18,14 +20,14 @@
       margin: 0;
       font-size: 2rem;
       font-weight: 500;
-      color: var(--text-color);
+      color: var(--card-text);
     }
 
     .descricao {
       margin: 5px 0 0 0;
       font-size: 0.95rem;
       text-transform: capitalize;
-      color: var(--text-color);
+      color: var(--card-text);
       opacity: 0.7;
     }
   }
@@ -44,7 +46,7 @@
         font-size: 5rem;
         font-weight: 300;
         line-height: 1;
-        color: var(--text-color);
+        color: var(--card-text);
       }
 
       .unidade {
@@ -62,9 +64,8 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      // Leve cava neumórfica para destacar o ícone climático
-      box-shadow: inset 3px 3px 6px var(--shadow-dark), 
-                  inset -3px -3px 6px var(--shadow-light);
+      box-shadow: 4px 4px 8px var(--card-shadow-dark), 
+                  -4px -4px 8px var(--card-shadow-light);
 
       img {
         width: 80px;
@@ -89,7 +90,7 @@
         font-size: 0.8rem;
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: var(--text-color);
+        color: var(--card-text);
         opacity: 0.6;
         margin-bottom: 5px;
       }
@@ -97,7 +98,7 @@
       .valor {
         font-size: 1.2rem;
         font-weight: 600;
-        color: var(--text-color);
+        color: var(--card-text);
       }
     }
   }
@@ -108,14 +109,20 @@
   max-width: 450px;
   margin: 0 auto;
   padding: 40px;
-  border-radius: 30px;
+  box-sizing: border-box;
+  
+  // ADICIONADO: Arredondamento para o estado inicial em branco
+  border-radius: 16px; 
+  
+  border: 2px dashed var(--card-shadow-dark);
+  box-shadow: inset 5px 5px 10px var(--card-shadow-dark), 
+              inset -5px -5px 10px var(--card-shadow-light);
+  background: var(--card-bg);
   text-align: center;
-  border: 2px dashed var(--shadow-dark);
-  color: var(--text-color);
-  opacity: 0.6;
+  color: var(--card-text);
+  opacity: 0.7;
 }
 
-// Micro-animação de entrada suave
 .animate-fade-in {
   animation: fadeIn 0.6s ease-out forwards;
 }
