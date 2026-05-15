@@ -1,19 +1,18 @@
 .container {
   width: 100%;
   max-width: 600px;
-  min-height: 100vh; // Ocupa a altura total da tela para centralizar verticalmente
+  min-height: 100vh; // Garante a centralização vertical no meio do monitor
   margin: 0 auto;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; // Centraliza o bloco inteiro no meio do monitor
+  align-items: center; // Centraliza a busca e o card horizontalmente por completo
+  justify-content: center; // Centraliza o bloco inteiro na vertical da tela
   box-sizing: border-box;
 
   .app-header {
     text-align: center;
     margin-bottom: 40px;
-    // CORRIGIDO: Força o alinhamento em coluna e centraliza os textos verticalmente
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +31,7 @@
       text-transform: uppercase;
       font-size: 0.75rem;
       letter-spacing: 2px;
-      margin: 8px 0 0 0; // Dá um respiro pequeno em relação ao h1 acima
+      margin: 8px 0 0 0; // Distância controlada em relação ao título h1
     }
   }
 }

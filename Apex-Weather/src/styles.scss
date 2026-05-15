@@ -13,45 +13,45 @@
   --shadow-light: #ebf2ff;
   --accent-color: #ffa500;
   
-  // Efeito de moldura quadrada nas bordas bem suave
+  // Moldura desativada por padrão
   --border-glow: inset 0 0 0px transparent;
 }
 
-// CHUVOSO: Moldura escura e suave bem nas bordas
+// CHUVOSO: Moldura azul escuro bem marcada nas bordas (80px de largura)
 body.theme-rain {
   --bg-color: #b0bec5;
   --shadow-dark: #90a4ae;
   --shadow-light: #cfd8dc;
   --accent-color: #3498db;
-  --border-glow: inset 0 0 150px rgba(44, 62, 80, 0.6); 
+  --border-glow: inset 0 0 80px rgba(44, 62, 80, 0.9); 
 }
 
-// NUVENS: Moldura grafite nas bordas
+// NUVENS: Moldura cinza grafite forte nas bordas
 body.theme-clouds {
   --bg-color: #cfd8e3;
   --shadow-dark: #b1b9c4;
   --shadow-light: #edf7ff;
   --accent-color: #95a5a6;
-  --border-glow: inset 0 0 150px rgba(93, 106, 117, 0.5);
+  --border-glow: inset 0 0 80px rgba(93, 106, 117, 0.8);
 }
 
-// CALOR EXTREMO: Centro salmão suave, laranja forte bem nas bordas da página
+// CALOR EXTREMO: Moldura laranja bem forte e concentrada nas bordas (80px de largura)
 body.theme-hot {
   --bg-color: #fbc5b0; 
   --shadow-dark: #dca08a;
   --shadow-light: #ffe6dd;
   --accent-color: #ff4757;
-  // Aumentado para 200px para empurrar o laranja forte totalmente para as bordas
-  --border-glow: inset 0 0 200px rgba(211, 84, 0, 0.9); 
+  // Raio reduzido para 80px e opacidade alta para o laranja grudar forte nas bordas
+  --border-glow: inset 0 0 80px rgba(211, 84, 0, 0.95); 
 }
 
-// NOTURNO: Centro azul escuro, bordas pretas
+// NOTURNO: Moldura preta sólida nas bordas externas
 body.theme-noite {
   --bg-color: #2c3e50;
   --shadow-dark: #1e2b38;
   --shadow-light: #3a5168;
   --accent-color: #f1c40f;
-  --border-glow: inset 0 0 200px #0f171e;
+  --border-glow: inset 0 0 100px rgba(15, 23, 30, 0.95);
 }
 
 html, body {
@@ -66,13 +66,14 @@ body {
   box-shadow: var(--border-glow);
   font-family: 'Inter', sans-serif;
   transition: background-color 0.8s ease, box-shadow 0.8s ease; 
-  // Garante que todo o conteúdo inserido no body possa ser centralizado corretamente
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center; 
+  min-height: 100vh;
+  width: 100vw;
 }
 
-// MIXINS TRAVADOS COM AS CORES DO CARD (Eles nunca mudam!)
+// MIXINS TRAVADOS COM AS CORES DO CARD
 @mixin neumorphic-flat {
   background: var(--card-bg);
   box-shadow: 9px 9px 16px var(--card-shadow-dark), 
