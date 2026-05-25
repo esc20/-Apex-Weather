@@ -12,19 +12,16 @@ import { debounceTime, distinctUntilChanged, filter } from 'rxjs/operators';
 })
 export class BuscaCidadeComponent implements OnInit {
   private fb = inject(FormBuilder);
-  
-  // Emite o nome da cidade para o componente Pai (Home)
   onBuscar = output<string>();
-
   buscaForm: FormGroup = this.fb.group({
     cidade: ['', [Validators.required, Validators.minLength(3)]]
   });
 
   ngOnInit() {
     this.buscaForm.get('cidade')?.valueChanges.pipe(
-      debounceTime(500),         // Aguarda 500ms após o usuário parar de digitar
-      distinctUntilChanged(),    // Evita buscar se o valor for idêntico ao anterior
-      filter(valor => valor && valor.trim().length >= 3) // Só avança com 3 ou mais letras
+      debounceTime(500),
+      distinctUntilChanged(),   
+      filter(valor => valor && valor.trim().length >= 3) 
     ).subscribe(valor => {
       this.onBuscar.emit(valor.trim());
     });

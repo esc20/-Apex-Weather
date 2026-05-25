@@ -10,6 +10,5 @@ import { WeatherData } from '../../../../core/models/weather.model';
   styleUrl: './card-clima.component.scss'
 })
 export class CardClimaComponent {
-  // Recebe os dados processados do componente pai (Home)
   dados = input<WeatherData | null>(null);
 }

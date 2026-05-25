@@ -7,5 +7,5 @@ export interface WeatherData {
   icon: string;
   condition: string;
   isNoite: boolean;
-  isQuente: boolean; // <-- Nova propriedade para calor extremo
+  isQuente: boolean; 
 }

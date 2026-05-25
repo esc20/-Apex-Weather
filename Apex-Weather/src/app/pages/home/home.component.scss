@@ -1,13 +1,13 @@
 .container {
   width: 100%;
   max-width: 600px;
-  min-height: 100vh; // Garante a centralização vertical no meio do monitor
+  min-height: 100vh; 
   margin: 0 auto;
   padding: 40px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; // Centraliza a busca e o card horizontalmente por completo
-  justify-content: center; // Centraliza o bloco inteiro na vertical da tela
+  align-items: center; 
+  justify-content: center; 
   box-sizing: border-box;
 
   .app-header {
@@ -31,7 +31,7 @@
       text-transform: uppercase;
       font-size: 0.75rem;
       letter-spacing: 2px;
-      margin: 8px 0 0 0; // Distância controlada em relação ao título h1
+      margin: 8px 0 0 0; 
     }
   }
 }

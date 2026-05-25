@@ -9,8 +9,6 @@
     padding: 15px 20px;
     border-radius: 16px; 
     background: var(--card-bg);
-    
-    // Efeito "afundado" usando as sombras fixas do card
     box-shadow: inset 5px 5px 10px var(--card-shadow-dark), 
                 inset -5px -5px 10px var(--card-shadow-light);
     position: relative;

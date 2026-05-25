@@ -1,7 +1,6 @@
 .card-clima-container {
-  // CORRIGIDO: Trava a largura fixa para o card não balançar ou mudar de tamanho
   width: 500px; 
-  max-width: 100%; // Garante responsividade em celulares pequenos
+  max-width: 100%; 
   margin: 0 auto;
   padding: 45px; 
   border-radius: 16px; 

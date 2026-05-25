@@ -1,23 +1,16 @@
-/* Global Styles - Apex Weather */
-
-// CONFIGURAÇÃO DO CARD (Cinza Neumórfico Neutro e Fixo)
 :root {
   --card-bg: #e0e5ec;
   --card-shadow-dark: #a3b1c6;
   --card-shadow-light: #ffffff;
   --card-text: #44474a;
-  
-  // Fundo padrão (Céu Limpo Inicial)
   --bg-color: #d1d9e6; 
   --shadow-dark: #b8bec9;
   --shadow-light: #ebf2ff;
   --accent-color: #ffa500;
-  
-  // Moldura desativada por padrão
   --border-glow: inset 0 0 0px transparent;
 }
 
-// CHUVOSO: Moldura azul escuro bem marcada nas bordas (80px de largura)
+
 body.theme-rain {
   --bg-color: #b0bec5;
   --shadow-dark: #90a4ae;
@@ -26,7 +19,7 @@ body.theme-rain {
   --border-glow: inset 0 0 80px rgba(44, 62, 80, 0.9); 
 }
 
-// NUVENS: Moldura cinza grafite forte nas bordas
+
 body.theme-clouds {
   --bg-color: #cfd8e3;
   --shadow-dark: #b1b9c4;
@@ -35,17 +28,16 @@ body.theme-clouds {
   --border-glow: inset 0 0 80px rgba(93, 106, 117, 0.8);
 }
 
-// CALOR EXTREMO: Moldura laranja bem forte e concentrada nas bordas (80px de largura)
+
 body.theme-hot {
   --bg-color: #fbc5b0; 
   --shadow-dark: #dca08a;
   --shadow-light: #ffe6dd;
   --accent-color: #ff4757;
-  // Raio reduzido para 80px e opacidade alta para o laranja grudar forte nas bordas
   --border-glow: inset 0 0 80px rgba(211, 84, 0, 0.95); 
 }
 
-// NOTURNO: Moldura preta sólida nas bordas externas
+
 body.theme-noite {
   --bg-color: #2c3e50;
   --shadow-dark: #1e2b38;
@@ -73,7 +65,6 @@ body {
   width: 100vw;
 }
 
-// MIXINS TRAVADOS COM AS CORES DO CARD
 @mixin neumorphic-flat {
   background: var(--card-bg);
   box-shadow: 9px 9px 16px var(--card-shadow-dark), 

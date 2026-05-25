@@ -21,9 +21,7 @@ export class WeatherService {
 
     return this.http.get<any>(this.BASE_URL, { params }).pipe(
       map(res => {
-        // Armazena o código do ícone (ex: '01d' ou '01n') para checar o período do dia
         const iconCode = res.weather[0].icon;
-        // Captura a temperatura arredondada para processar o calor extremo
         const temperatura = Math.round(res.main.temp);
 
         return {
@@ -34,9 +32,7 @@ export class WeatherService {
           description: res.weather[0].description,
           icon: `https://openweathermap.org/img/wn/${iconCode}@2x.png`,
           condition: res.weather[0].main,
-          // Se o código do ícone terminar com a letra 'n' (night), significa que é noite na cidade buscada
           isNoite: iconCode.endsWith('n'),
-          // Retorna verdadeiro se a temperatura atingir ou passar de 30°C
           isQuente: temperatura >= 30
         };
       })
