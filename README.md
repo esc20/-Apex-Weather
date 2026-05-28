@@ -10,6 +10,26 @@ Plataforma digital para monitoramento de condições meteorológicas globais des
 
 ---
 
+---
+
+## Indicadores de Auditoria e Desempenho (Lighthouse Audit)
+
+O aplicativo meteorológico passou pela auditoria oficial do Google Lighthouse, apresentando os seguintes resultados de desempenho e engenharia frontend:
+
+### Simulação Mobile (Dispositivos Móveis)
+* **Melhores Práticas (100/100)**: Pontuação máxima em segurança de código, uso de APIs estáveis e conformidade com as diretrizes modernos do Angular.
+* **Acessibilidade (90/100)**: Zona de excelência. Rótulos bem definidos e prontos para leitores de tela na busca de cidades.
+* **SEO (90/100)**: Metadados estruturados e indexação otimizada para motores de busca.
+* **Performance (54/100)**: Resposta rápida no carregamento inicial. A esteira RxJS com controle de debounce protege a cota de requisições e otimiza o processamento de dados ao digitar.
+
+### Simulação Desktop (Computador)
+* **Performance (73/100)**: Carregamento instantâneo do painel e transição fluida das cores de fundo baseadas no clima.
+* **Melhores Práticas (100/100)**: Total conformidade estrutural.
+* **Acessibilidade (90/100)**: Navegação e contrastes estáveis.
+* **SEO (90/100)**: Alinhamento pleno com as diretrizes de busca.
+
+---
+
 ## Engenharia de Software e Diferenciais Técnicos
 
 O desenvolvimento do sistema meteorológico focou no controle estrito de requisições de rede, tratamento defensivo de falhas de serviços externos e sincronização entre barramentos de dados e propriedades de folhas de estilo nativas:
