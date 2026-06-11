@@ -7,7 +7,7 @@ Plataforma digital para monitoramento de condições meteorológicas globais des
 
 ### DEMONSTRAÇÃO VISUAL
 
-![Interface do Simulador](assets/apex-weather.gif)
+![Interface do Simulador](Apex-Weather\assets\apex-weather.gif)
 
 ---
 
