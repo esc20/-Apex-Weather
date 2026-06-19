@@ -76,20 +76,6 @@ A transformação de dados econômicos opera sequencialmente sob o seguinte pipe
 
 ---
 
-### COMO EXECUTAR O PROJETO
+## Simulador Reativo de Evolução Patrimonial
 
-O projeto utiliza o ecossistema Angular CLI, exigindo o ambiente Node.js configurado localmente:
-
-1. Clone o repositório utilizando o comando:
-   ```bash
-   git clone https://github.com
-   ```
-2. Realize o download de todas as dependências e módulos de desenvolvimento:
-   ```bash
-   npm install
-   ```
-3. Inicialize o processo de compilação local:
-   ```bash
-   ng serve
-   ```
-4. Abra o navegador no endereço local padrão fornecido pelo framework: `http://localhost:4200`
+[Clique aqui para acessar o projeto online](apex-weather-iota.vercel.app)
