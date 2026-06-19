@@ -78,4 +78,4 @@ A transformação de dados econômicos opera sequencialmente sob o seguinte pipe
 
 ## Simulador Reativo de Evolução Patrimonial
 
-[Clique aqui para acessar o projeto online](apex-weather-iota.vercel.app)
+[Clique aqui para acessar o projeto online](https://apex-weather-iota.vercel.app/)
