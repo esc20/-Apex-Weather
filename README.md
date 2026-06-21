@@ -26,7 +26,8 @@ O aplicativo meteorológico passou pela auditoria oficial do Google Lighthouse, 
 ### ENGENHARIA DE SOFTWARE
 #### Diferenciais Técnicos e Arquitetura
 
-> O desenvolvimento do sistema meteorológico focou no controle estrito de requisições de rede, tratamento defensivo de falhas de serviços externos e sincronização entre barramentos de dados e propriedades de folhas de estilo nativas.
+> > O foco do projeto foi evitar o desperdício de internet, proteger o site contra falhas dos servidores de clima e garantir que o visual mude de forma automática e sem travamentos.
+
 
 *   **Otimização de Requisições (Debounce Control)**
     O componente de buscas intercepta a digitação do usuário através do fluxo assíncrono `valueChanges`. Para blindar a infraestrutura e evitar o consumo desnecessário de cotas de API, o sistema implementa o operador `debounceTime(500)` combinado ao `distinctUntilChanged()`. Esta engenharia garante que o servidor externo seja acionado apenas meio segundo após a cessação completa da digitação, bloqueando também chamadas repetidas para um mesmo termo.
@@ -76,6 +77,6 @@ A transformação de dados econômicos opera sequencialmente sob o seguinte pipe
 
 ---
 
-## Simulador Reativo de Evolução Patrimonial
+## Site Apex-Weather
 
 [Clique aqui para acessar o projeto online](https://apex-weather-iota.vercel.app/)
